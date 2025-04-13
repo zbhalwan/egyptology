@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ancient Ritual Map</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <!-- Add Google Fonts link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .header {
+        background-color: #2a4d69; /* Deep Blue */
+        color: #ffffff; /* White */
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+      .header h2 {
+        font-size: 2rem; /* Larger font for the title */
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .header p {
+        font-size: 1rem; /* Smaller font for the subtitle */
+        margin-bottom: 0.5rem;
+      }
+      .header .names {
+        font-size: 0.875rem; /* Smaller font for names */
+        font-weight: lighter;
+        opacity: 0.8; /* Lighter appearance */
+      }
+
+      #map {
+        height: 100%;
+      }
+      body {
+        font-family: "Libre Baskerville", serif;
+      }
+      h1 {
+        color: #333333;
+      }
+
+      .sidebar {
+        background-color: #d2bd96;
+        color: #2a4d69;
+        resize: horizontal; /* Allow horizontal resizing */
+        overflow: auto; /* Ensure content is scrollable if resized */
+        min-width: 200px; /* Minimum width for the sidebar */
+        max-width: 50%; /* Maximum width for the sidebar */
+        transition: width 0.3s ease; /* Smooth transition for resizing */
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <h2>Exploring Religious and Ritual Practices in Ancient Civilizations</h2>
+      <p class="names">
+        Zeeshan Bhalwani, Quynh Mai, Elise Petit, Amara Parker, Faith Kim
+      </p>
+    </div>
+
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <div class="sidebar w-1/3 p-4 overflow-y-scroll border-r border-gray-300">
+        <h1 class="text-3xl font-bold mb-6">Ancient Ritual Artifacts</h1>
+        <div id="card-container" class="space-y-4"></div>
+      </div>
+
+      <!-- Map -->
+      <div class="flex-1" id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+   
+
+    <script src="main.js"></script>
+  </body>
+</html>
