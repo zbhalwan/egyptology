@@ -83,7 +83,7 @@ artifacts.forEach((artifact) => {
     `;
   card.addEventListener("click", () => {
     // map.panTo(artifact.location, { animate: true });
-    map.setView(artifact.location, 6, { animate: true }); 
+    map.setView(artifact.location, 4, { animate: true }); 
      // Wait for the map to finish moving, then open the popup
      map.once('moveend', () => {
         marker.openPopup();
