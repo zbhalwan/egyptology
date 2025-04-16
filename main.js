@@ -150,7 +150,7 @@ const artifacts = [
       location: [37.0527, 25.3763], // Naxos
       image: "https://www.greeka.com/seedo/photos/1027/naxos-cave-of-zas-top-1-1280.jpg", // Placeholder image
       description: "This mountain was believed to be the location of the cave in which Zeus was raised while hiding from his father, Kronos.",
-      dates: "Blank",
+      dates: "N/A",
       source: "https://topostext.org/place/373253LDri",
     },
     {
@@ -161,7 +161,7 @@ const artifacts = [
       location: [35.7595, -5.8340], // Tanger
       image: "https://www.story-rabat.com/wp-content/uploads/2025/04/golden-passage-leading-to-the-ocean-1170x550.jpg", // Placeholder image
       description: "According to the myth, Hercules (adapted from the Greek Heracles) slept here on his way to steal three golden apples from the Garden of the Hesperides.",
-      dates: "Blank",
+      dates: "N/A",
       source: "https://topostext.org/place/373253LDri",
     },
     {
@@ -172,7 +172,7 @@ const artifacts = [
       location: [35.1928, -6.1563], // Larache
       image: "https://i0.wp.com/mythcrafts.com/wp-content/uploads/2019/08/the_garden_of_hesperides_by_ricciardo_meacci.jpg?resize=655%2C400&ssl=1", // Placeholder image
       description: "The garden was where Hercules had to steal the golden apples which were believed to confer immortality (the 11th of the \"12 Labors of Hercules\")",
-      dates: "Blank",
+      dates: "N/A",
       source: "https://www.atlasobscura.com/places/caves-of-hercules",
     },
     {
