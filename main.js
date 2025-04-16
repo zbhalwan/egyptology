@@ -94,7 +94,7 @@ const artifacts = [
       modernLocation: "Cairo, Egypt",
       location: [30.0478, 31.2336], // Cairo
       image: "https://arce.org/wp-content/uploads/files-imported/2019-01/Lange-Athinodorou_Abb.%204.%20Der%20Gro%C3%83%C5%B8e%20Tempel%20der%20Bastet.JPG", // Placeholder image
-      description: "NA",
+      description: "",
       dates: "NA",
       source: "https://arce.org/resource/goddess-bastet-and-cult-feline-deities-nile-delta/",
     },
