@@ -76,6 +76,10 @@
       #interactive {
         z-index: 1000; /* Ensure modal is above other content */
       }
+
+      #cosmogony {
+        z-index: 1000; /* Ensure modal is above other content */
+      }
     </style>
   </head>
   <body>
@@ -88,21 +92,26 @@
       <nav class="mt-4">
         <button
           onclick="document.getElementById('infoModal').classList.remove('hidden')"
-          class="px-4 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-600"
+          class="mx-2 px-2 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-600"
         >
           Mythical Site Comparisons 🌍
         </button>
 
         <button
           onclick="document.getElementById('interactive').classList.remove('hidden')"
-          class="px-4 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-600"
+          class="mx-2 px-2 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-600"
         >
-          Interactive Models 🖼️
+          Interactive Models 🏛
         </button>
 
-        <a href="page1.html" class="text-white hover:underline mx-2"
-          >Page 1</a
+        <button
+          onclick="document.getElementById('cosmogony').classList.remove('hidden')"
+          class="mx-2 px-2 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-600"
         >
+          Ancient Cosmogonies 🪐
+        </button>
+
+        <a href="page1.html" class="text-white hover:underline mx-2">Page 1</a>
         <a href="page2.html" class="text-white hover:underline mx-2">Page 2</a>
         <a href="page3.html" class="text-white hover:underline mx-2">Page 3</a>
         <a href="page4.html" class="text-white hover:underline mx-2">Page 4</a>
@@ -472,10 +481,265 @@
       </div>
     </div>
 
+    <!-- Cosmogony Modal -->
+    <div
+      id="cosmogony"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+    >
+      <div
+        class="bg-white max-w-6xl w-full p-6 rounded-lg shadow-lg overflow-y-auto max-h-screen relative"
+      >
+        <!-- Close Button (X Icon) -->
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+          aria-label="Close Modal"
+        >
+          <span
+            class="iconify"
+            data-icon="mdi:close"
+            data-inline="false"
+            style="font-size: 24px"
+          ></span>
+        </button>
+
+        <h2 class="text-2xl font-bold mb-6 text-center text-cyan-800">
+          Cosmogonies of the Ancient World
+        </h2>
+
+        <!-- Navigation Tabs -->
+        <nav
+          class="flex flex-wrap justify-center space-x-4 p-4 bg-gray-200 rounded-lg mb-6"
+        >
+          <button
+            class="text-sky-600 hover:underline"
+            data-tab-button="intro"
+            onclick="showTab('intro')"
+          >
+            Introduction
+          </button>
+          <button
+            class="text-sky-600 hover:underline"
+            data-tab-button="egypt"
+            onclick="showTab('egypt')"
+          >
+            Egypt
+          </button>
+          <button
+            class="text-sky-600 hover:underline"
+            data-tab-button="greece"
+            onclick="showTab('greece')"
+          >
+            Greece
+          </button>
+          <button
+            class="text-sky-600 hover:underline"
+            data-tab-button="rome"
+            onclick="showTab('rome')"
+          >
+            Rome
+          </button>
+          <button
+            class="text-sky-600 hover:underline"
+            data-tab-button="themes"
+            onclick="showTab('themes')"
+          >
+            Themes
+          </button>
+        </nav>
+
+        <!-- Tab Content -->
+        <div class="max-w-4xl mx-auto space-y-10">
+          <!-- Introduction -->
+          <section id="intro" data-tab-content>
+            <h3 class="text-xl font-semibold mb-4">Introduction</h3>
+            <ul class="list-disc space-y-2">
+              <li>
+                Cosmogonies are conceptualizations of the origin of the
+                universe. The ancient Greeks, Romans, and Egyptians had varying
+                mythological and religious beliefs surrounding the conception of
+                the world
+              </li>
+              <li>
+                The Greeks and Romans often depicted their gods in human form,
+                while the Egyptians had a more abstract representation of their
+                deities.
+              </li>
+              <li>
+                Through a comparison of foundational mythological narratives
+                from primary sources, we can better see how the ancient Greeks,
+                Romans, and Egyptians defined their own history and how these
+                thoughts shaped our world today.
+              </li>
+            </ul>
+            <!-- image of cosmogony -->
+            <div class="flex justify-center">
+              <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/17/The_Untangling_of_Chaos%2C_or_the_Creation_of_the_Four_Elements_LACMA_54.70.1a.jpg"
+              alt="Cosmogony"
+              class="rounded-lg shadow-lg"
+              width="400"
+              height="600"
+              />
+            </div>
+          </section>
+
+          <!-- Greece -->
+          <section id="greece" data-tab-content class="hidden px-6 py-12 md:px-12 max-w-full mx-auto text-gray-100 bg-gradient-to-b from-sky-950 to-sky-900 rounded-2xl shadow-2xl">
+            <!-- Hero Image -->
+            <div class="relative h-64 md:h-96 w-full mb-8 rounded-xl overflow-hidden shadow-lg">
+              <img src="https://chs.harvard.edu/wp-content/uploads/2021/03/Gaziantep_Zeugma_Museum_Oceanus_and_Thetys_1_mosaic_005-1.jpg"
+                   alt="Depiction from Hesiod's Theogony"
+                   class="object-cover w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-500">
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <h3 class="text-2xl md:text-4xl font-bold">Greece: Hesiod’s Theogony</h3>
+                <p class="text-sm md:text-base italic">“Sing of the gods, the first who came to be…”</p>
+              </div>
+            </div>
+          
+            <!-- Main Content -->
+            <div class="space-y-6 leading-relaxed text-lg">
+              <p>
+                <strong class="text-sky-300">The Theogony</strong> is one of the most important mythological texts to survive from ancient Greek antiquity,
+                telling the original creation of the present world order under the rule of <strong class="text-yellow-300">Zeus</strong>.
+              </p>
+          
+              <p>
+                <span class="text-sky-200 font-semibold">Hesiod</span> was an ancient Greek poet, philosopher, and farmer — likely a contemporary of Homer. Both were credited
+                by many ancient authors as the primary shapers of Greek religious tradition.
+              </p>
+          
+              <div class="border-l-4 border-sky-400 pl-4 italic text-sky-100 bg-sky-950/40 p-3 rounded-md shadow-inner">
+                “They gave me a staff, a branch of blooming laurel, and breathed into me a divine voice, so that I might sing of the things to come...”<br>
+                — <span class="text-sky-300">Hesiod, Theogony</span>
+              </div>
+          
+              <p>
+                According to Hesiod, he was tending flocks at the foot of <span class="text-emerald-300">Mount Helikon</span> when the Muses appeared to him,
+                gifting him with the power of divine song. <span class="text-sky-300 font-semibold">The Theogony</span> is the output of that gift — a cosmic hymn
+                mapping the genealogy of gods and the birth of the world.
+              </p>
+          
+              <p>
+                In Hesiod’s vision, <span class="text-pink-300 font-medium">theogony</span> (the birth of the gods) is also a <span class="text-pink-300 font-medium">cosmogony</span> (the birth of the cosmos). The world begins not with physical matter, but with divine hierarchy.
+              </p>
+          
+              <p>
+                The poem ultimately centers on the rise of <strong class="text-yellow-300">Zeus</strong>, whose kingship symbolizes the ordering of divine chaos into a coherent universe.
+                It’s as much a creation myth as it is a declaration of Zeus’s supreme rule.
+              </p>
+            </div>
+          
+            <!-- Reference -->
+            <div class="mt-10 text-sm text-gray-400 border-t border-sky-800 pt-4">
+              Source: <em>Hesiod, and Barry B. Powell. <strong class="text-gray-300">Poems of Hesiod</strong> — Theogony, Works and Days, and the Shield of Herakles. University of California Press, 2017.</em>
+            </div>
+          </section>
+          
+
+          <!-- Rome -->
+          <section id="rome" data-tab-content class="hidden">
+            <h3 class="text-xl font-semibold mb-4">
+              Rome: Ovid's Metamorphoses
+            </h3>
+            <p>
+              Publius Ovidius Naso (Ovid) was born in Sulmo in 43 BCE. His most
+              famous work is the Metamorphoses...
+            </p>
+          </section>
+
+          <!-- Egypt -->
+          <section id="egypt" data-tab-content class="hidden">
+            <h3 class="text-xl font-semibold mb-4">
+              Egypt: Pyramid Texts & Coffin Texts
+            </h3>
+            <p>
+              Egyptian cosmogony is distinct from Greek and Roman versions. We
+              focus here on the Heliopolitan cosmogony...
+            </p>
+          </section>
+
+          <!-- Themes -->
+          <section id="themes" data-tab-content class="hidden">
+            <h3 class="text-xl font-semibold mb-4">Themes</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-lg font-bold">Primordial State</h4>
+                <p>
+                  Greek “Chaos” vs. Roman elemental separation vs. Egyptian
+                  “Nu”. Hesiod and Ovid both start with Chaos, while Egyptians
+                  describe the primeval waters of Nu...
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-bold">Birth of Gods</h4>
+                <p>
+                  Hesiod outlines a divine genealogy. Ovid skips god origins,
+                  focusing on stories. Egyptian myths show Atum creating other
+                  gods from himself...
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-bold">Cosmic Conflict & Harmony</h4>
+                <p>
+                  This section can explore the Titanomachy, Roman divine
+                  punishments, and Egyptian dualities like Ma’at and Isfet...
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-bold">Creation of Humanity</h4>
+                <p>
+                  Compare Prometheus’ creation in Greece, the Four Ages in Rome,
+                  and Khnum’s pottery wheel in Egypt...
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-bold">Sustaining Order</h4>
+                <p>
+                  Zeus’ rule, Roman law via Jupiter and Augustus, and Ma’at in
+                  Egypt all show divine order sustaining the cosmos...
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
     <script>
       function closeModal() {
         document.getElementById("infoModal").classList.add("hidden");
         document.getElementById("interactive").classList.add("hidden");
+        document.getElementById("cosmogony").classList.add("hidden");
+      }
+      document
+        .getElementById("infoModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) this.classList.add("hidden");
+        });
+
+      document
+        .getElementById("interactive")
+        .addEventListener("click", function (e) {
+          if (e.target === this) this.classList.add("hidden");
+        });
+
+      document
+        .getElementById("cosmogony")
+        .addEventListener("click", function (e) {
+          if (e.target === this) this.classList.add("hidden");
+        });
+
+      function showTab(tabId) {
+        document.querySelectorAll("[data-tab-content]").forEach((content) => {
+          content.classList.add("hidden");
+        });
+        document.getElementById(tabId).classList.remove("hidden");
       }
     </script>
   </body>
