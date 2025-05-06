@@ -83,6 +83,9 @@
       #worksCited {
         z-index: 1000; /* Ensure modal is above other content */
       }
+      #godsdepic {
+        z-index: 1000; /* Ensure modal is above other content */
+      }
 
       .view-butt {
         background-color: #d2bd96;
@@ -113,12 +116,12 @@
           >
             Temples
           </button>
-          <button
+          <!-- <button
             onclick="showView('cosmogonies')"
             class="view-butt text-black px-2 py-1 rounded w-42"
           >
             Cosmogonies
-          </button>
+          </button> -->
           <button
             onclick="showView('gods')"
             class="view-butt text-black px-2 py-1 rounded w-42"
@@ -149,7 +152,7 @@
         </button>
 
         <button
-          onclick="document.getElementById('gods').classList.remove('hidden')"
+          onclick="document.getElementById('godsdepic').classList.remove('hidden')"
           class="mx-2 px-2 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-600"
         >
           Depiction of Gods 👑
@@ -1606,6 +1609,44 @@
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
     >
       <div
+      class="bg-white max-w-4xl w-full p-6 rounded-lg shadow-lg overflow-y-auto max-h-screen relative"
+      >
+      <!-- Close Button (X Icon) -->
+      <button
+        onclick="closeModal()"
+        class="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+        aria-label="Close Modal"
+      >
+        <span
+        class="iconify"
+        data-icon="mdi:close"
+        data-inline="false"
+        style="font-size: 24px"
+        ></span>
+      </button>
+
+      <h2 class="text-2xl font-bold mb-6 text-center text-cyan-800">
+        Works Cited
+      </h2>
+      <div class="overflow-hidden rounded-lg border border-gray-300">
+        <iframe
+        src="assets/refs.pdf"
+        frameborder="0"
+        class="w-full h-96"
+        ></iframe>
+      </div>
+      </div>
+    </div>
+
+    <!-- Modal for gods depic -->
+    <div
+      id="godsdepic"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div
         class="bg-white max-w-4xl w-full p-6 rounded-lg shadow-lg overflow-y-auto max-h-screen relative"
       >
         <!-- Close Button (X Icon) -->
@@ -1622,130 +1663,193 @@
           ></span>
         </button>
 
-        <h2 class="text-2xl font-bold mb-4 text-center text-cyan-800">
-          Works Cited
+        <h2
+          id="modalTitle"
+          class="text-2xl font-bold mb-4 text-center text-cyan-800"
+        >
+          Comparative Depictions of Gods in Ancient Civilizations
         </h2>
 
-        
-        <!-- Books Section -->
+        <p class="text-sm text-gray-700 mb-4">
+          The ancient Greeks, Romans, and Egyptians each represented their gods
+          in distinct ways that reflected their broader cultural values and
+          religious beliefs. In Greece, deities were typically portrayed with
+          idealized human forms and deeply human emotions, making them relatable
+          figures whose myths conveyed moral and social lessons. Roman
+          representations, while heavily borrowed from the Greek pantheon,
+          emphasized the political utility of religion; Roman art often
+          highlighted divine approval for the emperor and the state, and gods
+          were shown as extensions of imperial power or embodiments of civic
+          virtues like Victory and Peace. In contrast, Egyptian gods were
+          usually represented with hybrid forms—human bodies combined with
+          animal heads or features—emphasizing their otherworldly power and
+          specific domains. These depictions were closely tied to religious
+          ritual and cosmic balance.
+        </p>
+
+        <p class="text-sm text-gray-700 mb-4">
+          We combined museum artifact primary sources with scholarly research to
+          identify, compare, and analyze how gods were depicted by individuals,
+          and to understand how religious practices influenced artistic
+          representation. In terms of artistic function, Greek art often
+          explored the interaction between humans and gods, showcasing myths on
+          pottery, coins, and grave reliefs that reflected emotional depth and
+          human struggles. Roman art, especially public monuments and imperial
+          coinage, served to solidify the divine right and authority of leaders,
+          with less emphasis on emotion and more on state ideology. Egyptian
+          art, on the other hand, was deeply integrated into religious practice,
+          with statues, tomb paintings, and amulets used to protect the dead and
+          invoke the gods’s presence in daily life and the afterlife. Symbolism
+          in all three cultures played a vital role, though its focus varied:
+          Greek symbols were used to identify gods and evoke feelings or ideas
+          (such as fear or protection), Roman symbols reinforced virtues and
+          political power, and Egyptian symbols (like the ankh) had profound
+          spiritual and cosmic significance, often aligning with celestial
+          phenomena. Despite their differences, all three traditions used art to
+          bridge the mortal and divine realms, embedding theological, political,
+          and emotional meaning in their visual culture.
+        </p>
+
+        <!-- Greece Section -->
         <div class="mb-6">
-          <h3 class="text-xl font-semibold mb-2 text-gray-900">Books/Texts/Publications</h3>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Greece</h3>
           <div class="space-y-4 text-sm text-gray-700">
             <div>
-              <strong>Arnold, Dieter.</strong>
+              <strong>Anthropomorphic Depictions:</strong>
               <p>
-                Building in Egypt: Pharaonic Stone Masonry. Oxford University
-                Press, 1991.
+                Greek gods were portrayed with human forms and emotions,
+                embodying idealized human traits.
               </p>
             </div>
             <div>
-              <strong>Wilkinson, Richard H.</strong>
-              <p>
-                The Complete Temples of Ancient Egypt. Thames & Hudson, 2000.
-              </p>
+              <strong>Artistic Mediums:</strong>
+              <ul class="list-disc pl-6">
+                <li>
+                  Vases and Pottery: Depicted mythological scenes and deities,
+                  serving both functional and decorative purposes.
+                </li>
+                <li>
+                  Coins: Featured images of gods, linking divine favor to
+                  city-states and leaders.
+                </li>
+                <li>
+                  Grave Reliefs: Illustrated gods guiding souls to the
+                  afterlife, emphasizing their role in human destiny.
+                </li>
+              </ul>
             </div>
             <div>
-              <strong>Spivey, Nigel.</strong>
-              <p>
-                Understanding Greek Sculpture: Ancient Meanings, Modern
-                Readings. Thames & Hudson, 1996.
-              </p>
-            </div>
-            <div>
-              <strong>Neils, Jennifer, ed.</strong>
-              <p>
-                The Parthenon: From Antiquity to the Present. Cambridge
-                University Press, 2005.
-              </p>
-            </div>
-            <div>
-              <strong>MacDonald, William L.</strong>
-              <p>
-                The Pantheon: Design, Meaning, and Progeny. Harvard University
-                Press, 2002.
-              </p>
-            </div>
-            <div>
-              <strong>Claridge, Amanda.</strong>
-              <p>
-                Rome: An Oxford Archaeological Guide. Oxford University Press,
-                2010.
-              </p>
-            </div>
-            <div>
-              <strong>Sear, Frank.</strong>
-              <p>Roman Architecture. Routledge, 1982.</p>
-            </div>
-            <div>
-              <strong>Shafer, Byron E., ed.</strong>
-              <p>
-                Religion in Ancient Egypt: Gods, Myths, and Personal Practice.
-                Cornell University Press, 1991.
-              </p>
-            </div>
-            <div>
-              <strong>Foster, John L.</strong>
-              <p>
-                Hymns, Prayers, and Songs: An Anthology of Ancient Egyptian
-                Lyric Poetry. E-book. Atlanta, Ga: Scholars Press, 1995.
-              </p>
+              <strong>Symbolism:</strong>
+              <ul class="list-disc pl-6">
+                <li>
+                  Attributes: Objects like Zeus's thunderbolt or Athena's owl
+                  identified deities and their domains.
+                </li>
+                <li>
+                  Emotional Indicators: Symbols conveyed emotions and
+                  sensations, such as fear or protection.
+                </li>
+                <li>
+                  Astrological Connections: Certain symbols had celestial
+                  associations, linking gods to cosmic phenomena.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        
-        <!-- Classical Texts Section -->
+        <!-- Rome Section -->
         <div class="mb-6">
-          <h3 class="text-xl font-semibold mb-2 text-gray-900">
-            Classical Texts
-          </h3>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Rome</h3>
           <div class="space-y-4 text-sm text-gray-700">
             <div>
-              <strong>Publius Ovidius Naso, et al.</strong>
+              <strong>Adoption and Adaptation:</strong>
               <p>
-                Metamorphoses. Bloomington, Indiana: Indiana University Press,
-                2018.
+                Roman deities were heavily influenced by Greek counterparts,
+                often adopting their characteristics and iconography.
               </p>
             </div>
             <div>
-              <strong>Hesiod, and Barry B. Powell.</strong>
-              <p>
-                Poems of Hesiod - Theogony, Works and Days, and the Shield of
-                Herakles. University of California Press, 2017.
-              </p>
+              <strong>Artistic Mediums:</strong>
+              <ul class="list-disc pl-6">
+                <li>
+                  Sculpture and Architecture: Used to glorify emperors and
+                  associate them with divine qualities.
+                </li>
+                <li>
+                  Coins: Circulated images of gods to promote political messages
+                  and imperial propaganda.
+                </li>
+                <li>
+                  Public Monuments: Depicted deities to reinforce state ideology
+                  and religious practices.
+                </li>
+              </ul>
             </div>
             <div>
-              <strong>Plutarch.</strong>
-              <p>Moralia. Translated by F.C. Babbit, 1936.</p>
+              <strong>Symbolism:</strong>
+              <ul class="list-disc pl-6">
+                <li>
+                  Imperial Association: Emperors were often depicted with divine
+                  attributes to legitimize their rule.
+                </li>
+                <li>
+                  Virtues Personified: Abstract concepts like Victory (Victoria)
+                  or Peace (Pax) were personified and worshipped.
+                </li>
+                <li>
+                  Astrological Elements: Incorporated zodiac signs and celestial
+                  motifs to align the empire with cosmic order.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <!-- Websites Section -->
+        <!-- Egypt Section -->
         <div class="mb-6">
-          <h3 class="text-xl font-semibold mb-2 text-gray-900">Websites</h3>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Egypt</h3>
           <div class="space-y-4 text-sm text-gray-700">
             <div>
-              <strong>SMK - Statens Museum for Kunst.</strong>
+              <strong>Hybrid Representations:</strong>
               <p>
-                “Image KMS1.”
-                <a
-                  href="https://open.smk.dk/en/artwork/image/KMS1"
-                  target="_blank"
-                  >https://open.smk.dk/en/artwork/image/KMS1</a
-                >
+                Egyptian gods were depicted with a combination of human and
+                animal features, symbolizing their powers and domains.
               </p>
             </div>
-          </div>
-        </div>
-
-        <!-- Class Slides Section -->
-        <div class="mb-6">
-          <h3 class="text-xl font-semibold mb-2 text-gray-900">Class Slides</h3>
-          <div class="space-y-4 text-sm text-gray-700">
             <div>
-              <strong>Week 2 and Week 3 Class Slides.</strong>
-              <p>PT and CT translations from the course slides.</p>
+              <strong>Artistic Mediums:</strong>
+              <ul class="list-disc pl-6">
+                <li>
+                  Tomb Paintings and Reliefs: Illustrated gods in the afterlife,
+                  guiding and protecting the deceased.
+                </li>
+                <li>
+                  Statues and Amulets: Served as conduits for divine presence
+                  and were used in rituals and daily life.
+                </li>
+                <li>
+                  Hieroglyphs: Combined visual art and writing to convey
+                  religious and mythological narratives.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <strong>Symbolism:</strong>
+              <ul class="list-disc pl-6">
+                <li>Ankh: Represented life and immortality.</li>
+                <li>Djed Pillar: Symbolized stability.</li>
+                <li>Was Scepter: Denoted power and dominion.</li>
+                <li>
+                  Color Usage: Colors had specific meanings (e.g., green for
+                  rebirth, black for fertility and the afterlife).
+                </li>
+                <li>
+                  Astronomical Alignments: Temples and artworks aligned with
+                  celestial bodies, reflecting the gods' connection to the
+                  cosmos.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1758,6 +1862,7 @@
         document.getElementById("interactive").classList.add("hidden");
         document.getElementById("cosmogony").classList.add("hidden");
         document.getElementById("worksCited").classList.add("hidden");
+        document.getElementById("godsdepic").classList.add("hidden");
       }
       document
         .getElementById("infoModal")
@@ -1778,6 +1883,12 @@
         });
       document
         .getElementById("worksCited")
+        .addEventListener("click", function (e) {
+          if (e.target === this) this.classList.add("hidden");
+        });
+
+      document
+        .getElementById("godsdepic")
         .addEventListener("click", function (e) {
           if (e.target === this) this.classList.add("hidden");
         });
