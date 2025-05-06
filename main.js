@@ -364,19 +364,722 @@ const temples = [
 
 const gods = [
   {
-    id: 101,
-    title: "Zeus Statue at Olympia",
-    ancientLocation: "Olympia, Greece",
-    modernLocation: "Olympia, Greece",
-    location: [37.637, 21.63],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Statue_of_Zeus.jpg/800px-Statue_of_Zeus.jpg",
-    description:
-      "One of the Seven Wonders of the Ancient World, the statue of Zeus was a massive seated figure made by the sculptor Phidias.",
-    dates: "Completed circa 435 BCE",
-    source: "https://www.britannica.com/topic/Zeus-Greek-god",
+    id: 1,
+    title: "Jupiter, King of Gods",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The British Museum, London, UK",
+    location: [41.8892, 12.4876], // British Museum coordinates
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/13_18/02bdbefc_5bc1_4ea0_a158_a3c3012dea9e/mid_00822434_001.jpg",
+    description: "King of Roman gods, equivalent to Greek Zeus, depicted as a powerful ruler with authority over sky and thunder.",
+    dates: "1613",
+    source: "https://www.britishmuseum.org/collection/object/P_1868-0612-1376"
   },
-  // Add more gods as needed
+  {
+    id: 2,
+    title: "Bronze Statuette of Jupiter",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/251215/534075/main-image",
+    description: "Roman supreme deity, ruler of the gods, depicted as a mature bearded figure often wielding a thunderbolt.",
+    dates: "late 1st century CE",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/251215/534075/main-image"
+  },
+  {
+    id: 3,
+    title: "Juno and the Peacock",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/207645/1580191/main-image",
+    description: "Queen of Roman gods, wife of Jupiter and goddess of marriage and childbirth, depicted with regal attributes.",
+    dates: "late 16th century",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/207645/1580191/main-image"
+  },
+  {
+    id: 4,
+    title: "Juno, Queen of all Goddesses",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/715006/1672299/main-image",
+    description: "Roman goddess of marriage and women, equivalent to Greek Hera, depicted as a matronly figure with dignified bearing.",
+    dates: "1889",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/715006/1672299/main-image"
+  },
+  {
+    id: 5,
+    title: "Standing Cup of Neptune",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The British Museum, London, UK",
+    location: [41.8892, 12.4876], // British Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/461184/918110/main-image",
+    description: "Roman god of the sea, equivalent to Greek Poseidon, depicted as a powerful bearded figure wielding a trident.",
+    dates: "1594",
+    source: "https://www.britishmuseum.org/collection/object/H_WB-115"
+  },
+  {
+    id: 6,
+    title: "Neptune by Michel Anguier",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/192731/394265/main-image",
+    description: "God of freshwater and the sea in Roman mythology, typically shown as a muscular figure with sea attributes.",
+    dates: "18-19th century",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/192731/394265/main-image"
+  },
+  {
+    id: 7,
+    title: "Copper Alloy Figure of Mars",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The British Museum, London, UK",
+    location: [41.8892, 12.4876], // British Museum coordinates
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/1_6/03e382db_fe27_4e6b_94c6_a3b7006e9590/mid_00032982_001.jpg",
+    description: "Roman god of war, equivalent to Greek Ares, depicted as an armored warrior figure with weapons.",
+    dates: "2nd century AD; Romano-British era",
+    source: "https://www.britishmuseum.org/collection/object/H_1871-0601-1"
+  },
+  {
+    id: 8,
+    title: "Marble Relief Fragment with the Head of Mars",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/250709/533111/main-image",
+    description: "Roman war deity, second only to Jupiter in importance, portrayed as a helmeted warrior figure.",
+    dates: "early 3rd century CE",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/250709/533111/main-image"
+  },
+  {
+    id: 9,
+    title: "Bronze Statuette of Minerva",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/250784/1776616/main-image",
+    description: "Roman goddess of wisdom and strategic warfare, equivalent to Greek Athena, depicted with helmet, spear and owl.",
+    dates: "2nd century CE",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/250784/1776616/main-image"
+  },
+  {
+    id: 10,
+    title: "Minerva by Benvenuto Cellini",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/198746/1590708/main-image",
+    description: "Roman goddess of wisdom, healing, and strategy, typically shown wearing armor with symbols of knowledge.",
+    dates: "second half 16th century",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/198746/1590708/main-image"
+  },
+  {
+    id: 11,
+    title: "Cérès by Guillaume Coustou",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Louvre, Paris, France",
+    location: [41.8892, 12.4876], // Louvre coordinates
+    image: "assets/0001130532_OG.JPG",
+    description: "Roman goddess of agriculture and grain crops, equivalent to Greek Demeter, depicted with wheat and harvest symbols.",
+    dates: "1726 / 1736",
+    source: "https://collections.louvre.fr/en/ark:/53355/cl010092049"
+  },
+  {
+    id: 12,
+    title: "Bronze Statue of Ceres by Michel Anguier",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/826290/1987118/main-image",
+    description: "Roman goddess of the harvest and maternal relationships, portrayed with agricultural symbols and vegetation.",
+    dates: "1700 after a 1652 model",
+    source: "https://www.metmuseum.org/art/collection/search/826290"
+  },
+  {
+    id: 13,
+    title: "Apollo by Adriaen de Vries",
+    ancientLocation: "Greece, Ancient Greece",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [37.9838, 23.7275], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/199016/480587/main-image",
+    description: "God of music, arts, prophecy and healing in both Greek and Roman mythology, depicted as a youthful, handsome figure.",
+    dates: "ca. 1594–98",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/199016/480587/main-image"
+  },
+  {
+    id: 14,
+    title: "Apollo by Hendrick Goltzius",
+    ancientLocation: "Greece, Ancient Greece",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [37.9838, 23.7275], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/340036/771665/main-image",
+    description: "Greek and Roman god of light, music and prophecy, typically portrayed as an idealized young man with lyre or bow.",
+    dates: "1588",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/340036/771665/main-image"
+  },
+  {
+    id: 15,
+    title: "Diana by Karl Theodore Bitter",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/10171/24059/main-image",
+    description: "Roman goddess of the hunt, moon, and wilderness, equivalent to Greek Artemis, depicted as a huntress with bow and arrows.",
+    dates: "1910",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/10171/24059/main-image"
+  },
+  {
+    id: 16,
+    title: "Diana by Augustus Saint-Gaudens",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/11998/40786/main-image",
+    description: "Roman goddess of the hunt and moon, portrayed as a young woman with hunting attributes and often accompanied by deer.",
+    dates: "1892–93, cast 1928",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/11998/40786/main-image"
+  },
+  {
+    id: 17,
+    title: "Marble Relief of a Woman as Venus",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The British Museum, London, UK",
+    location: [41.8892, 12.4876], // British Museum coordinates
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/5_20/3b5c8a12_0cab_407f_a7c3_a3bb0159be3a/mid_00376350_001.jpg",
+    description: "Roman goddess of love, beauty and desire, equivalent to Greek Aphrodite, depicted as the epitome of female beauty.",
+    dates: "100–120 AD",
+    source: "https://www.britishmuseum.org/collection/object/G_1948-0423-1"
+  },
+  {
+    id: 18,
+    title: "Venus and Cupid by Lorenzo Lotto",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436918/2169880/main-image",
+    description: "Roman goddess of love and beauty, typically portrayed as an idealized nude or partially clothed female figure.",
+    dates: "1520s",
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436918/2169880/main-image"
+  },
+  {
+    id: 19,
+    title: "Saucer Bowl with Vulcan",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The British Museum, London, UK",
+    location: [41.8892, 12.4876], // British Museum coordinates
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_9/30_15/b8312e4d_91a4_4b95_9d97_a3b601053216/mid_00020376_001.jpg",
+    description: "Roman god of fire and metalworking, equivalent to Greek Hephaestus, depicted as a blacksmith with hammer and forge.",
+    dates: "1539",
+    source: "https://www.britishmuseum.org/collection/object/H_1878-1230-373"
+  },
+  {
+    id: 20,
+    title: "Bronze Statue of Vulcan",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/206781/1580185/main-image",
+    description: "Roman god of fire and craftsmanship, often portrayed as a bearded smith with tools and sometimes with a lame leg.",
+    dates: "16th century",
+    source: "https://www.metmuseum.org/art/collection/search/206781"
+  },
+  {
+    id: 21,
+    title: "The Farnese Hermes",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The British Museum, London, UK",
+    location: [41.8892, 12.4876], // British Museum coordinates
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/10_11/318fe5f1_ca97_4d3f_867f_a3c000b9ddb7/mid_00548110_001.jpg",
+    description: "Roman messenger god and deity of commerce, equivalent to Greek Hermes, depicted with winged hat and sandals.",
+    dates: "1st century AD",
+    source: "https://www.britishmuseum.org/collection/object/G_1864-1021-1"
+  },
+  {
+    id: 22,
+    title: "Statuette of Mercury",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/899859/2256072/main-image",
+    description: "Roman god of travelers and commerce, portrayed as a youthful, athletic figure with winged attributes.",
+    dates: "c. 2nd Century CE",
+    source: "https://www.metmuseum.org/art/collection/search/899859"
+  },
+  {
+    id: 23,
+    title: "Wall Painting of Bacchus",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The British Museum, London, UK",
+    location: [41.8892, 12.4876], // British Museum coordinates
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/5_20/a9adf4e7_db9e_442a_9333_a3bb0159ab45/mid_00376343_001.jpg",
+    description: "Roman god of wine and revelry, equivalent to Greek Dionysus, depicted with grape vines and often in an ecstatic state.",
+    dates: "circa 30 BC",
+    source: "https://www.britishmuseum.org/collection/object/G_1899-0215-1"
+  },
+  {
+    id: 24,
+    title: "Hope Dionysos Statue",
+    ancientLocation: "Rome, Roman Empire",
+    modernLocation: "The Metropolitan Museum of Art, New York, USA",
+    location: [41.8892, 12.4876], // Met Museum coordinates
+    image: "https://www.metmuseum.org/art/collection/search/255973",
+    description: "Roman god of wine and festivity, typically shown as a youthful or effeminate figure often with vine leaves and grapes.",
+    dates: "7 BCE–68 CE",
+    source: "https://www.metmuseum.org/art/collection/search/255973"
+  },
+  {
+    title: "Nu",
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/5_21/7096bda1_ae77_47bd_88c9_a3bb015df6f6/mid_00377924_001.jpg",
+    modernLocation: "The British Museum",
+    description: "Nu, the primordial waters, often shown as a supporting or surrounding force.",
+    dates: "18th Dynasty",
+    symbols: [],
+    source: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/5_21/7096bda1_ae77_47bd_88c9_a3bb015df6f6/mid_00377924_001.jpg",
+    ancientLocation: "Hermopolis, Egypt",
+    location: [27.776, 30.8]
+  },
+  {
+    title: "Nu",
+    image: "assets/Screen Shot 2025-05-06 at 1.35.02 AM.png",
+    modernLocation: "The Louvre",
+    description: "Nu depicted as a winged goddess on a sarcophagus cover.",
+    dates: "390 -1352 BCE",
+    symbols: ["wings"],
+    source: "https://collections.louvre.fr/en/ark:/53355/cl010027594",
+    ancientLocation: "Hermopolis, Egypt",
+    location: [27.776, 30.8]
+  },
+  {
+    title: "Amun-Re",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/544874/1151843/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Amun-Re, king of the gods, depicted with tall crown and divine symbols.",
+    dates: "ca. 945–712 B.C.",
+    symbols: ["ankh", "scimitar", "crown"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/544874/1151843/main-image",
+    ancientLocation: "Thebes, Egypt",
+    location: [25.7, 32.6]
+  },
+  {
+    title: "Amun-Re",
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2021_2/16_17/d1648152_2c1e_46e6_bc5e_acd1011f0c50/mid_obverse_ed_TIF.jpg",
+    modernLocation: "The British Museum",
+    description: "Throne-seated figure of Amun-Ra wearing his symbolic crown.",
+    dates: "19th Dynasty",
+    symbols: ["flat-topped crown"],
+    source: "https://media.britishmuseum.org/media/Repository/Documents/2021_2/16_17/d1648152_2c1e_46e6_bc5e_acd1011f0c50/mid_obverse_ed_TIF.jpg",
+    ancientLocation: "Thebes, Egypt",
+    location: [25.7, 32.6]
+  },
+  {
+    title: "Shu",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/546052/1214127/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Shu separating sky and earth, a key act in Egyptian cosmology.",
+    dates: "332–30 B.C.",
+    symbols: [],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/546052/1214127/main-image",
+    ancientLocation: "Heliopolis, Egypt",
+    location: [30.13, 31.28]
+  },
+  {
+    title: "Shu",
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/2_20/d8a74345_7014_4ced_a2ad_a3b8014ab92d/mid_00329068_001.jpg",
+    modernLocation: "The British Museum",
+    description: "Amulet of Shu kneeling with a sun-disk headdress.",
+    dates: "26th Dynasty",
+    symbols: ["sun-disk"],
+    source: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/2_20/d8a74345_7014_4ced_a2ad_a3b8014ab92d/mid_00329068_001.jpg",
+    ancientLocation: "Heliopolis, Egypt",
+    location: [30.13, 31.28]
+  },
+  {
+    title: "Tefnut",
+    image: "https://imgsrv.brooklynmuseum.org/collections/objects/CUR.05.364_wwgA-1.jpg?width=3840&quality=75",
+    modernLocation: "The Brooklyn Museum",
+    description: "Tefnut shown as a lioness, symbolizing moisture and power.",
+    dates: "664–332 B.C.E.",
+    symbols: [],
+    source: "https://imgsrv.brooklynmuseum.org/collections/objects/CUR.05.364_wwgA-1.jpg?width=3840&quality=75",
+    ancientLocation: "Heliopolis, Egypt",
+    location: [30.13, 31.28]
+  },
+  {
+    title: "Tefnut",
+    image: "assets/Screen Shot 2025-05-06 at 1.36.22 AM.png",
+    modernLocation: "The Louvre",
+    description: "Stela showing Tefnut with Shu, carved in limestone.",
+    dates: "32 to 30 BCE",
+    symbols: [],
+    source: "https://collections.louvre.fr/en/ark:/53355/cl010005998",
+    ancientLocation: "Heliopolis, Egypt",
+    location: [30.13, 31.28]
+  },
+  {
+    title: "Geb",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/555683/2050542/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Object linked to Geb, the earth god, possibly a ritual whip.",
+    dates: "ca. 1981–1802 B.C.",
+    symbols: [],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/555683/2050542/main-image",
+    ancientLocation: "Heliopolis, Egypt",
+    location: [30.13, 31.28]
+  },
+  {
+    title: "Geb",
+    image: "assets/0000067683_OG.JPG",
+    modernLocation: "The Louvre",
+    description: "Back of a stela features Geb, carved in wood.",
+    dates: "730 -745 BCE",
+    symbols: [],
+    source: "https://collections.louvre.fr/en/ark:/53355/cl010017961",
+    ancientLocation: "Heliopolis, Egypt",
+    location: [30.13, 31.28]
+  },
+  {
+    title: "Nut",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/549265/1661385/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Winged Nut pectoral, the sky goddess protecting the dead.",
+    dates: "Dynasty 19",
+    symbols: ["wings"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/549265/1661385/main-image",
+    ancientLocation: "Thebes, Egypt",
+    location: [25.7, 32.6]
+  },
+  {
+    title: "Nut",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/555221/2221453/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Nut shown before an offering table on a limestone stela.",
+    dates: "ca. 1550–1295 B.C.",
+    symbols: [],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/555221/2221453/main-image",
+    ancientLocation: "Thebes, Egypt",
+    location: [25.7, 32.6]
+  },
+  {
+    title: "Osiris",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/570658/1216588/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Osiris as ruler of the underworld, mummiform with crook and flail.",
+    dates: "664–30 B.C.",
+    symbols: ["crook", "flail"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/570658/1216588/main-image",
+    ancientLocation: "Abydos, Egypt",
+    location: [26.186, 31.921]
+  },
+  {
+    title: "Osiris",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/573692/1854102/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Osiris figure carved in anhydrite stone.",
+    dates: "522–343 B.C.",
+    symbols: [],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/573692/1854102/main-image",
+    ancientLocation: "Abydos, Egypt",
+    location: [26.186, 31.921]
+  },
+  {
+    title: "Isis",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/548310/1214471/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Isis nursing Horus, a symbol of rebirth and motherhood.",
+    dates: "332–30 B.C.",
+    symbols: ["throne headdress"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/548310/1214471/main-image",
+    ancientLocation: "Philae, Egypt",
+    location: [24.024, 32.884]
+  },
+  {
+    title: "Isis",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/551003/1221893/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Isis amulet representing protection and magical power.",
+    dates: "332–30 B.C.",
+    symbols: [],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/551003/1221893/main-image",
+    ancientLocation: "Philae, Egypt",
+    location: [24.024, 32.884]
+  },
+  {
+    title: "Seth",
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_11/12_19/eb6e5ed6_db19_4784_a75b_a3e101442d9e/mid_00125833_001.jpg",
+    modernLocation: "The British Museum",
+    description: "Wooden amulet of Seth, god of chaos, seated with curled tail.",
+    dates: "Unknown",
+    symbols: [],
+    source: "https://www.britishmuseum.org/collection/object/Y_EA30460",
+    ancientLocation: "Ombos (Naqada), Egypt",
+    location: [26.05, 32.24]
+  },
+  {
+    title: "Zeus",
+    image: "assets/SC50763.jpg",
+    modernLocation: "Boston Museum of Fine Arts",
+    description: "God of the Sky; Zeus from east pediment of Temple of Zeus at Olympia; Plaster.",
+    dates: "Unknown, 1883 acquisition",
+    symbols: ["lightning bolt", "eagle", "swan", "clouds", "bull", "oak tree"],
+    source: "https://collections.mfa.org/objects/388014/zeus-from-east-pediment-temple-of-zeus-at-olympia?ctx=7a07db38-7d65-466d-8dee-afc3f88b1764&idx=0",
+    ancientLocation: "Olympia, Greece",
+    location: [37.638, 21.630]
+  },
+  {
+    title: "Zeus",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/252511/516065/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Marble head of a god, probably Zeus; marble.",
+    dates: "3rd or 2nd century BCE, Hellenistic Period",
+    symbols: [],
+    source: "https://www.metmuseum.org/art/collection/search/252511",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Hera",
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_11/9_19/0e79fa76_4488_4a8d_8b58_a3de0143ea09/mid_01466274_001.jpg",
+    modernLocation: "The British Museum",
+    description: "Queen of the gods; Gold hat jewel showing the Judgement of Paris in relief; includes Aphrodite, Eros, Athena, and Hermes.",
+    dates: "1525–1575",
+    symbols: ["diadem", "pomegranate", "peacock", "cow"],
+    source: "https://www.britishmuseum.org/collection/object/H_WB-152",
+    ancientLocation: "Argos, Greece",
+    location: [37.633, 22.733]
+  },
+  {
+    title: "Hera",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/256598/534535/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Terracotta neck-amphora jar; Obverse: Hera sending out Iris with the Nemean lion; Reverse: Herakles wrestling the Nemean lion.",
+    dates: "500 BCE, Archaic Period",
+    symbols: [],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/256598/534535/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Poseidon",
+    image: "assets/SC263449.jpg",
+    modernLocation: "Boston Museum of Fine Arts",
+    description: "God of the sea; Stater of Poseidonia with Poseidon hurling trident.",
+    dates: "530–500 B.C, Archaic Period",
+    symbols: ["trident", "fish", "horse"],
+    source: "https://collections.mfa.org/objects/2266/stater-of-poseidonia-with-poseidon-hurling-trident?ctx=a8afd325-c7c2-4cea-974e-e9c9fe03a21c&idx=9",
+    ancientLocation: "Poseidonia (Paestum), Magna Graecia, Rome",
+    location: [40.421, 15.005]
+  },
+  {
+    title: "Poseidon",
+    image: "assets/SC247208.jpg",
+    modernLocation: "Boston Museum of Fine Arts",
+    description: "Drachm with head of Poseidon; Gold.",
+    dates: "About 213–205 B.C., Hellenistic Period",
+    symbols: [],
+    source: "https://collections.mfa.org/objects/87067/drachm-with-head-of-poseidon?ctx=915c095e-20ec-4f73-9363-e023610041de&idx=21",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Ares",
+    image: "assets/SC40660.jpg",
+    modernLocation: "Boston Museum of Fine Arts",
+    description: "God of battle and war; Oil flask depicting Nike sacrificing a bull between Ares and Aphrodite.",
+    dates: "About 394–390 B.C., Classical Period",
+    symbols: ["spear", "helmet", "armor", "dog", "chariot", "torch", "vulture"],
+    source: "https://collections.mfa.org/objects/153774/oil-flask-squat-lekythos-depicting-nike-sacrificing-a-bull;jsessionid=1F0A3F48D0D8ECB0DE4B08155EAA4A31?ctx=8bbbdddf-ba4d-471c-9084-f2ff3a30d0b1&idx=7",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Ares",
+    image: "assets/SC254157.jpg",
+    modernLocation: "Boston Museum of Fine Arts",
+    description: "1/6 stater of Mytilene with head of Ares.",
+    dates: "400–350 B.C., Classical Period",
+    symbols: [],
+    source: "https://collections.mfa.org/objects/2137/16-stater-of-mytilene-with-head-of-ares;jsessionid=1F0A3F48D0D8ECB0DE4B08155EAA4A31?ctx=8bbbdddf-ba4d-471c-9084-f2ff3a30d0b1&idx=0",
+    ancientLocation: "Mytilene, Greece",
+    location: [39.107, 26.555]
+  },
+  {
+    title: "Athena",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/254648/1356876/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Goddess of war and wisdom; Bronze statuette of Athena flying her owl.",
+    dates: "460 BCE, Classical Period",
+    symbols: ["owl", "olive tree", "spear", "aegis", "shield", "serpents"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/254648/1356876/main-image",
+    ancientLocation: "Athens, Greece",
+    location: [37.983, 23.727]
+  },
+  {
+    title: "Athena",
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/11_18/4325547c_02f3_4111_80d2_a3c101329110/mid_00687711_001.jpg",
+    modernLocation: "The British Museum",
+    description: "Silver tetradrachm with the head of Athena on the obverse, and an owl on the reverse.",
+    dates: "450–406 BC, Classical Period",
+    symbols: ["owl"],
+    source: "https://www.britishmuseum.org/collection/object/C_1905-0309-7",
+    ancientLocation: "Athens, Greece",
+    location: [37.983, 23.727]
+  },
+  {
+    title: "Demeter",
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/1_6/fc15a18a_0feb_42f1_bb45_a3b7006f3b69/mid_00033201_001.jpg",
+    modernLocation: "The British Museum",
+    description: "Goddess of harvest, fertility, and the earth; Parian marble figure of Demeter with a torch.",
+    dates: "2nd century AD",
+    symbols: ["grain", "cornucopia", "bread"],
+    source: "https://www.britishmuseum.org/collection/object/G_1836-1008-2",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Demeter",
+    image: "assets/SC246912.jpg",
+    modernLocation: "Boston Museum of Fine Arts",
+    description: "Stater of Metapontion with head of Demeter, signed by Aristoxenos; silver mint.",
+    dates: "410–330 B.C., Classical Period",
+    symbols: ["grain", "cornucopia", "bread"],
+    source: "https://collections.mfa.org/objects/1148/stater-of-metapontion-with-head-of-demeter-signed-by-aristo?ctx=781fc184-4609-402b-bc29-0f3131572eb1&idx=4",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Apollo",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/247971/506616/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "God of archery, music/dance, truth, and prophecy; Bronze statuette of Apollo with bow and libation vessel.",
+    dates: "ca. 500 BCE, Classical Period",
+    symbols: ["lyre", "serpent", "bow and arrow", "python", "laurel wreath", "tripod", "sun"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/247971/506616/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Apollo",
+    image: "assets/SC125471.jpg",
+    modernLocation: "Boston Museum of Fine Arts",
+    description: "Roundel with Apollo; musician figure with lyre and laurel wreath.",
+    dates: "150–100 B.C., Hellenistic Period",
+    symbols: ["laurel wreath"],
+    source: "https://collections.mfa.org/objects/198/roundel-with-apollo?ctx=1c78b6f9-8de1-4e4b-8967-4cc9fe78e816&idx=8",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Artemis",
+    image: "https://media.britishmuseum.org/media/Repository/Documents/2014_10/5_21/9c1447a8_ccd5_4390_815e_a3bb015f31cc/mid_00378153_001.jpg",
+    modernLocation: "The British Museum",
+    description: "Goddess of wild animals, the hunt, vegetation, chastity and childbirth; Bronze figure of Artemis.",
+    dates: "2nd–1st century BC, Hellenistic period",
+    symbols: ["bow and arrow", "deer", "quiver", "moon"],
+    source: "https://www.britishmuseum.org/collection/object/G_1951-0606-14",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Artemis",
+    image: "assets/Screen Shot 2025-05-06 at 1.56.54 AM.png",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Bronze statue of Artemis and a Deer wearing hunting attire.",
+    dates: "1st century BCE–1st century CE, Late Hellenistic or Early Imperial Era",
+    symbols: ["deer"],
+    source: "https://www.metmuseum.org/art/collection/search/258081",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Aphrodite",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/255409/2022253/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Bronze statuette of Aphrodite with silver eyes, holding the apple from the Judgment of Paris.",
+    dates: "3rd–1st century BCE, Hellenistic Period",
+    symbols: ["pomegranate", "golden apple", "dove", "swan", "scallop shell"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/255409/2022253/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Aphrodite",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/257642/536522/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Marble statue of Aphrodite.",
+    dates: "2nd century BCE, Hellenistic Period",
+    symbols: ["pomegranate", "golden apple", "dove", "swan", "scallop shell"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/257642/536522/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Hephaestus",
+    image: "assets/SC346599.jpg",
+    modernLocation: "Boston Museum of Fine Arts",
+    description: "Etching of Hephaestus from 'The Twelve Olympian Gods with Signs of the Zodiac' by Johann Georg Bergmüller.",
+    dates: "Unknown",
+    symbols: ["hammer", "anvil", "fire", "donkey", "volcano"],
+    source: "https://collections.mfa.org/objects/632005/the-twelve-olympian-gods-with-signs-of-the-zodiac-hephaest?ctx=04358bf5-1175-4da0-b8c7-0da135ca24ad&idx=0",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Hephaestus",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/254859/1905229/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Terracotta amphora jar with black-figure style associated with Hephaestus.",
+    dates: "ca. 540 BCE, Archaic Period",
+    symbols: ["hammer", "anvil", "fire", "donkey", "volcano"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/254859/1905229/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Hermes",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/256193/539600/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Gold finger ring engraved with Hermes fastening a wing to his foot.",
+    dates: "late 4th century BCE, Late Classical Period",
+    symbols: ["caduceus", "winged shoes", "petasos", "tortoise shell"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/256193/539600/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Hermes",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/255933/524907/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Bronze herm of Hermes.",
+    dates: "ca. 490 BCE, Archaic Period",
+    symbols: ["caduceus", "winged shoes", "petasos", "tortoise shell"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/255933/524907/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Dionysos",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/254996/1523458/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Marble statuette of Dionysos in Thracian attire with panther skin and goatskin cape.",
+    dates: "early 3rd century BCE, early Hellenistic Greek period",
+    symbols: ["grapes", "ivy", "thyrsus", "pine cone"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/254996/1523458/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  },
+  {
+    title: "Dionysos",
+    image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/257518/528960/main-image",
+    modernLocation: "The Metropolitan Museum of Art",
+    description: "Faience appliqué with a bust of Dionysos.",
+    dates: "3rd–1st century BCE, Hellenistic period",
+    symbols: ["grapes", "ivy", "thyrsus", "pine cone"],
+    source: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/257518/528960/main-image",
+    ancientLocation: "Greece",
+    location: [39.074, 21.824]
+  }
 ];
+
 
 
 const map = L.map("map").setView([34.0, 15.0], 5);
