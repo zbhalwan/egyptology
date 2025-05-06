@@ -113,7 +113,8 @@ const artifacts = [
     location: [30.0478, 31.2336], // Cairo
     image:
       "https://arce.org/wp-content/uploads/files-imported/2019-01/Lange-Athinodorou_Abb.%204.%20Der%20Gro%C3%83%C5%B8e%20Tempel%20der%20Bastet.JPG", // Placeholder image
-    description: "Bubastis was a major cult center dedicated to Bastet, the feline goddess of home, fertility, and protection. Known for its grand temple and cat festivals, it drew pilgrims from across Egypt.",
+    description:
+      "Bubastis was a major cult center dedicated to Bastet, the feline goddess of home, fertility, and protection. Known for its grand temple and cat festivals, it drew pilgrims from across Egypt.",
     dates: "NA",
     source:
       "https://arce.org/resource/goddess-bastet-and-cult-feline-deities-nile-delta/",
@@ -282,7 +283,7 @@ const artifacts = [
     ancientLocation: "Urbs Roma, Ancient Rome",
     modernLocation: "Rome, Italy",
     location: [41.8986, 12.4768], // Pantheon
-    image: "https://openaccess-cdn.clevelandart.org/1974.39/1974.39_web.jpg", // Placeholder image
+    image: "https://www.italiandualcitizenship.net/wp-content/uploads/2019/03/History-of-the-Pantheon-Italy.jpg", // Placeholder image
     description:
       "Built by Emperor Hadrian to serve as the temple of all gods. One myth states that the original Pantheon was built on the spot where Romulus, the mythical founder of Rome, ascended to heaven after his death.",
     dates: "125-128 AD",
@@ -318,12 +319,71 @@ const artifacts = [
   },
 ];
 
+const temples = [
+  {
+    id: 1,
+    title: "Parthenon",
+    ancientLocation: "Athens, Acropolis",
+    modernLocation: "Athens, Greece",
+    location: [37.9715, 23.7267],
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg",
+    description:
+      "Dedicated to Athena Parthenos, the patron goddess of Athens. The Parthenon symbolized civic pride and divine favor, merging art, architecture, and religious devotion during the height of Athenian power.",
+    dates: "Constructed 447–432 BCE",
+    source: "https://assets.cambridge.org/97805218/20936/frontmatter/9780521820936_frontmatter.pdf",
+  },
+  {
+    id: 2,
+    title: "Pantheon",
+    ancientLocation: "Campus Martius",
+    modernLocation: "Rome, Italy",
+    location: [41.8986, 12.4768],
+    image:
+      "https://www.italiandualcitizenship.net/wp-content/uploads/2019/03/History-of-the-Pantheon-Italy.jpg",
+    description:
+      "Originally built to honor all Roman gods, the Pantheon was later converted to a Christian church. Its massive dome and oculus remain engineering marvels, reflecting Rome’s religious plurality and architectural mastery.",
+    dates: "Completed c. 126 CE under Hadrian",
+    source: "https://www.hup.harvard.edu/books/9780674010192",
+  },
+  {
+    id: 3,
+    title: "Fifth Dynasty Sun Temple of Niuserre",
+    ancientLocation: "Abu Ghurab",
+    modernLocation: "Giza Governorate, Egypt",
+    location: [29.9214, 31.2096],
+    image:
+      "https://www.suntemplesproject.org/wp-content/uploads/2022/04/3D-reconstruction-2-1024x486.jpg",
+    description:
+      "A solar temple dedicated to the sun god Ra by Pharaoh Niuserre. Part of Egypt’s Fifth Dynasty emphasis on solar cult worship, it featured an obelisk and altar aligned with the sun’s movement.",
+    dates: "Reign of Niuserre (c. 2445–2421 BCE)",
+    source:
+      "https://archive.org/details/the-complete-temples-of-ancient-egypt_202407",
+  },
+];
+
+const gods = [
+  {
+    id: 101,
+    title: "Zeus Statue at Olympia",
+    ancientLocation: "Olympia, Greece",
+    modernLocation: "Olympia, Greece",
+    location: [37.637, 21.63],
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Statue_of_Zeus.jpg/800px-Statue_of_Zeus.jpg",
+    description:
+      "One of the Seven Wonders of the Ancient World, the statue of Zeus was a massive seated figure made by the sculptor Phidias.",
+    dates: "Completed circa 435 BCE",
+    source: "https://www.britannica.com/topic/Zeus-Greek-god",
+  },
+  // Add more gods as needed
+];
+
+
 const map = L.map("map").setView([34.0, 15.0], 5);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors",
 }).addTo(map);
 
-// const cardContainer = document.getElementById("card-container");
 const markers = [];
 
 let ColorIcon = L.Icon.extend({
@@ -352,55 +412,85 @@ const egyptContainer = document.getElementById("egypt-container");
 const greeceContainer = document.getElementById("greece-container");
 const romeContainer = document.getElementById("rome-container");
 
-// Iterate through artifacts and group them by category
-artifacts.forEach((artifact) => {
-  const marker = L.marker(artifact.location, { icon: redIcon }).addTo(map);
+let currentMarkers = [];
 
-  const popupContent = `
+function clearSidebarAndMarkers() {
+  egyptContainer.innerHTML = "";
+  greeceContainer.innerHTML = "";
+  romeContainer.innerHTML = "";
+  currentMarkers.forEach((m) => map.removeLayer(m));
+  currentMarkers = [];
+}
+
+function renderData(dataset) {
+  clearSidebarAndMarkers();
+  dataset.forEach((item) => {
+    const marker = L.marker(item.location, { icon: redIcon }).addTo(map);
+    currentMarkers.push(marker);
+
+    const popupContent = `
       <div style="max-width: 300px; font-family: 'Libre Baskerville', serif;">
-        <img src="${artifact.image}" alt="${artifact.title}" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
-        <h2 style="font-size: 18px; font-weight: bold;">${artifact.title}</h2>
-        <p><strong>Ancient Location:</strong> ${artifact.ancientLocation}</p>
-        <p><strong>Modern Location:</strong> ${artifact.modernLocation}</p>
-        <p><strong>Description:</strong> ${artifact.description}</p>
-        <p><strong>Dates:</strong> ${artifact.dates}</p>
-        <p><strong>Source:</strong> <a href="${artifact.source}" target="_blank" style="color: blue; text-decoration: underline;">Learn more</a></p>
+        <img src="${item.image}" alt="${item.title}" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 8px;" />
+        <h2 style="font-size: 18px; font-weight: bold;">${item.title}</h2>
+        <p><strong>Ancient Location:</strong> ${item.ancientLocation}</p>
+        <p><strong>Modern Location:</strong> ${item.modernLocation}</p>
+        <p><strong>Description:</strong> ${item.description}</p>
+        <p><strong>Dates:</strong> ${item.dates}</p>
+        <p><strong>Source:</strong> <a href="${item.source}" target="_blank">Learn more</a></p>
       </div>
     `;
-  marker.bindPopup(popupContent);
+    marker.bindPopup(popupContent);
 
-  const card = document.createElement("div");
-  card.className =
-    "border p-4 rounded-lg shadow hover:bg-gray-50 cursor-pointer";
-  card.innerHTML = `
-      <h2 class="text-lg font-semibold">${artifact.title}</h2>
-      <p class="text-sm">${artifact.description}</p>
+    const card = document.createElement("div");
+    card.className =
+      "border p-4 rounded-lg shadow hover:bg-gray-50 cursor-pointer";
+    card.innerHTML = `
+      <h2 class="text-lg font-semibold">${item.title}</h2>
+      <p class="text-sm">${item.description}</p>
     `;
-  card.addEventListener("click", () => {
-    map.setView(artifact.location, 4, { animate: true });
-    setTimeout(() => {
-      marker.openPopup();
-      // Adjust the map so the popup is fully visible (shift up)
-      map.panBy([0, -200], { animate: true });
-    }, 500);
-  });
+    card.addEventListener("click", () => {
+      map.setView(item.location, 4, { animate: true });
+      setTimeout(() => {
+        marker.openPopup();
+        map.panBy([0, -200], { animate: true });
+      }, 500);
+    });
 
-  // Append the card to the appropriate category container
-  if (
-    artifact.ancientLocation.includes("Egypt") ||
-    artifact.modernLocation.includes("Egypt")
-  ) {
-    egyptContainer.appendChild(card);
-  } else if (
-    artifact.ancientLocation.includes("Greece") ||
-    artifact.modernLocation.includes("Greece")
-  ) {
-    greeceContainer.appendChild(card);
-  } else if (
-    artifact.ancientLocation.includes("Rome") ||
-    artifact.modernLocation.includes("Rome")
-  ) {
-    romeContainer.appendChild(card);
-  }
-
+    if (
+      item.ancientLocation.includes("Egypt") ||
+      item.modernLocation.includes("Egypt")
+    ) {
+      egyptContainer.appendChild(card);
+    } else if (
+      item.ancientLocation.includes("Greece") ||
+      item.modernLocation.includes("Greece")
+    ) {
+      greeceContainer.appendChild(card);
+    } else if (
+      item.ancientLocation.includes("Rome") ||
+      item.modernLocation.includes("Rome")
+    ) {
+      romeContainer.appendChild(card);
+    }
 });
+
+}
+
+function showView(viewName) {
+  const titleElement = document.getElementById("dynamic-title");
+
+  if (viewName === "temples") {
+    renderData(temples);
+    titleElement.textContent = "Temple Architecture";
+  } else if (viewName === "myths") {
+    renderData(artifacts);
+    titleElement.textContent = "Geography of Myths";
+  } else if (viewName === "gods") {
+    renderData(gods);
+    titleElement.textContent = "Depiction of Gods";
+  }
+}
+
+
+showView("myths"); // Default view
+
